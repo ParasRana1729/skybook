@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple flight booking website - find and book your perfect flight">
+    <title>SkyBook - Flight Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1 class="logo">SkyBook</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#search">Search Flights</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#" id="auth-link">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Professional Flight Solutions</h2>
+                <p>Trusted by businesses worldwide for reliable, efficient flight booking services. Advanced technology, competitive rates, and 24/7 support.</p>
+                <div class="hero-cta">
+                    <a href="#search" class="hero-btn">Book Now</a>
+                    <a href="#about" class="hero-btn secondary">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50k+</span>
+                        <span class="stat-label">Happy Travelers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="search" class="search-section">
+            <div class="container">
+                <h3>Search Flights</h3>
+                <form id="flight-form" class="flight-form">
+                    <div class="form-group">
+                        <label for="from">From</label>
+                        <input type="text" id="from" name="from" placeholder="Departure city" required>
+                        <span class="error-message" id="from-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <input type="text" id="to" name="to" placeholder="Destination city" required>
+                        <span class="error-message" id="to-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="departure">Departure Date</label>
+                        <input type="date" id="departure" name="departure" required>
+                        <span class="error-message" id="departure-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="return">Return Date</label>
+                        <input type="date" id="return" name="return">
+                        <span class="error-message" id="return-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <select id="passengers" name="passengers" required>
+                            <option value="">Select passengers</option>
+                            <option value="1">1 Passenger</option>
+                            <option value="2">2 Passengers</option>
+                            <option value="3">3 Passengers</option>
+                            <option value="4">4 Passengers</option>
+                            <option value="5">5+ Passengers</option>
+                        </select>
+                        <span class="error-message" id="passengers-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <select id="class" name="class" required>
+                            <option value="">Select class</option>
+                            <option value="economy">Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first">First Class</option>
+                        </select>
+                        <span class="error-message" id="class-error"></span>
+                    </div>
+
+                    <button type="submit" class="search-btn">Search Flights</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="results" class="results-section" style="display: none;">
+            <div class="container">
+                <h3>Available Flights</h3>
+                <div id="flight-results" class="flight-results"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h3>About SkyBook</h3>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>SkyBook is your trusted partner for flight booking. We provide easy-to-use search functionality and competitive prices for flights worldwide.</p>
+                        <div class="features">
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <img src="images/takeoff-icon.svg" alt="Global Coverage" class="feature-img">
+                                </div>
+                                <h4>Global Coverage</h4>
+                                <p>Connect to 500+ destinations worldwide</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <img src="images/target-icon.svg" alt="Best Prices" class="feature-img">
+                                </div>
+                                <h4>Best Prices</h4>
+                                <p>Competitive rates guaranteed</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">
+                                    <img src="images/shield-icon.svg" alt="Secure Booking" class="feature-img">
+                                </div>
+                                <h4>Secure Booking</h4>
+                                <p>Safe and secure transactions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="images/airline-1.jpg" alt="Modern commercial airline aircraft" class="main-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fleet" class="fleet-section">
+            <div class="container">
+                <h3>Our Partner Airlines</h3>
+                <p class="fleet-description">Fly with confidence on our premium airline partners</p>
+                <div class="airline-gallery">
+                    <div class="airline-card">
+                        <img src="images/airline-1.jpg" alt="Premium airline aircraft" class="airline-image">
+                        <div class="airline-info">
+                            <h4>Premium Fleet</h4>
+                            <p>Modern aircraft with latest technology</p>
+                        </div>
+                    </div>
+                    <div class="airline-card">
+                        <img src="images/airline-2.jpg" alt="Comfortable airline interior" class="airline-image">
+                        <div class="airline-info">
+                            <h4>Comfort First</h4>
+                            <p>Spacious seating and premium amenities</p>
+                        </div>
+                    </div>
+                    <div class="airline-card">
+                        <img src="images/airline-3.jpg" alt="International airline service" class="airline-image">
+                        <div class="airline-info">
+                            <h4>Global Reach</h4>
+                            <p>International destinations worldwide</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Modal -->
+        <div id="auth-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="register">Register</button>
+                    </div>
+                    
+                    <!-- Login Form -->
+                    <form id="login-form" class="auth-form active">
+                        <h3>Welcome Back</h3>
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                            <span class="error-message" id="login-email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                            <span class="error-message" id="login-password-error"></span>
+                        </div>
+                        <button type="submit" class="auth-btn">Login</button>
+                    </form>
+                    
+                    <!-- Register Form -->
+                    <form id="register-form" class="auth-form">
+                        <h3>Create Account</h3>
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" name="name" placeholder="Enter your full name" required>
+                            <span class="error-message" id="register-name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
+                            <span class="error-message" id="register-email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" name="password" placeholder="Create a password" required>
+                            <span class="error-message" id="register-password-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-confirm">Confirm Password</label>
+                            <input type="password" id="register-confirm" name="confirm" placeholder="Confirm your password" required>
+                            <span class="error-message" id="register-confirm-error"></span>
+                        </div>
+                        <button type="submit" class="auth-btn">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SkyBook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
